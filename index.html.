@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Web Transcription Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Web-Based Transcription Tool</h2>
+    <input type="file" id="audioFile" accept="audio/*" />
+    <button onclick="transcribeAudio()">Transcribe</button>
+    <textarea id="transcription" placeholder="Transcription will appear here..."></textarea>
+  </div>  <script>
+    async function transcribeAudio() {
+      const fileInput = document.getElementById('audioFile');
+      const textArea = document.getElementById('transcription');
+
+      if (!fileInput.files[0]) {
+        alert('Please select an audio file.');
+        return;
+      }
+
+      // Mock transcription output for demo
+      // Replace this part with actual API integration (e.g., Whisper API or backend call)
+      textArea.value = "[Transcription will appear here after processing the audio file.]";
+
+      // Simulate delay
+      setTimeout(() => {
+        textArea.value = "This is a simulated transcription of the uploaded audio file.";
+      }, 2000);
+    }
+  </script></body>
+</html>
